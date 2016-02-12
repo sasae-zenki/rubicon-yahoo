@@ -199,3 +199,212 @@ HTML同様「[W3C CSS validator](https://jigsaw.w3.org/css-validator/)」など�
 ## IDとクラスの命名
 IDとクラス名にはちゃんと意味のわかる名前を使うこと。
 見た目を反映したものやそれが何を表しているか不可解な名前ではなく、要素の目的や役割を反映した名前を付ける。
+```CSS
+/* NG: 意味がわからん*/
+#yee-1901 {}
+
+/* NG: 見た目を表している*/
+.button-green {}
+.clear {}
+
+/* OK: 役割を表している*/
+#gallery {}
+#login {}
+.video {}
+
+/* OK: 汎用的な名前*/
+.aux {}
+.alt {}
+```
+
+## IDとクラスの命名スタイル
+意味の分かる範囲で出来るだけ短いIDととクラス名を使う。
+短くしすぎて意味がわからなくなるようなものはNG。
+```CSS
+/* NG */
+#navigation {}
+.art{}
+
+/* OK */
+#nav {}
+.author {}
+```
+
+## タイプセレクタの記述
+IDとクラス名にタイプセレクタは記述しない。
+パフォーマンスを考慮して不要な子孫セレクタも避ける。
+```CSS
+/* NG */
+ul#example {}
+div.error {}
+
+/* OK */
+#example {}
+.error {}
+```
+
+## ショートハンドプロパティ
+可能なかぎりショートハンドでプロパティを書く。
+```CSS
+/* NG */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+
+/* OK */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+```
+
+## 「0」と単位
+値が0なら、単位を省略する。
+```CSS
+margin: 0;
+padding: 0;
+```
+
+## 小数点の頭の「0」
+小数点の頭「0」は省略する。
+```CSS
+font-size: .8em;
+```
+## URL値の引用符
+url()での指定において、""(ダブルコーテーション)を引用符として使用すること。
+```CSS
+@import url("///www.google.com/css/go.css");
+```
+
+## HEX形式のカラーコード
+HEX形式のカラーコードで3文字で表記できるものは3文字にする。
+なるべく3文字で表記できる色を使う様にする。
+```CSS
+/* NG */
+color: #eebbcc;
+
+/* OK */
+color: #ebc;
+```
+
+## プレフィックス(接頭辞)
+IDやクラス名には固有の3文字の接頭辞を付ける。
+これは、IDとクラス名が重複しないように3文字の接頭辞(名前空間など)を付ける。
+接頭辞は後ろにハイフンを付けて繋げる。
+```CSS
+.adw-help {} /* Adwords */
+#main-note {} /* Maia */
+```
+
+## IDやクラス名の区切り文字
+IDやクラス名の別々の単語はハイフンで繋ぐ。
+```CSS
+/* NG: [demo]と[image]が繋がっている。 */
+.demoimage {}
+/* NG: アンダーバーで繋がっている。 */
+.demo_image {}
+
+/* OK */
+#demo-image {}
+.demo-image {}
+```
+
+## CSSハック
+ユーザーエージェント別の対応のためにCSSハックを使う前に別の方法を試してみること。
+CSSをハックは、ユーザーエージェントごとの違いを吸収するためには簡単で魅力的な方法だけど、プロジェクト全体のコードの品質を落とすことにもなるので **「最後の手段」** として考えること。
+
+# CSS書式ルール
+## プロパティの記述順序
+アルファベット順に記述する。
+ベンダープレフィックスは無視する。ただし、-moz接頭辞は-webkitの前に来る。などの順序は保つこと。
+```CSS
+border: 1px solid;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+```
+
+## ブロック単位のインデント
+その合いそうが分かるようにブロック単位でコードをインデントする。
+```CSS
+@media screen, projection {
+    html {
+        background: #fff;
+        color: #444;
+    }
+}
+```
+
+## プロパティの終端
+すべてのプロパティの終端はセミコロンを書くこと。
+```CSS
+/* NG */
+.test {
+    display: block;
+    height: 100px
+}
+/* OK */
+.test {
+    display: block;
+    height: 100px;
+}
+```
+
+## プロパティ名の終端
+全てのプロパティ名の終端にはコロンの後にスペースと入れること。
+```CSS
+/* NG */ h3 {
+    font-weight:bold;
+}
+/* OK */ h3 {
+    font-weight: bold;
+}
+```
+
+## セレクタとプロパティの分離
+別々のセレクタとプロパティは改行して書くこと。
+``CSS
+/* NG */
+a:focus, a:active {
+    position: relative; top: 1px;
+}
+
+/* OK */
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+```
+## CSSルールの分離
+別々のCSSをルールは開業して一行間明けて書く。
+```CSS
+html {
+    background: #fff;
+}
+body {
+    margin: auto;
+width: 50%; }
+```
+
+# CSSメタルール
+## セクションのコメント
+セクションごとにコメント(任意)を記述する。
+```CSS
+/* Header */
+#adw-header {}
+/* Footer */
+#adw-footer {}
+/* Gallery */
+.adw-gallery {}
+```
+
+#最後に
+ コードには「 **一貫性** を持ちましょう。」
