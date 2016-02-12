@@ -148,3 +148,54 @@ The currency symbol for the Euro is &ldquo;&eur;&ldquo;.
 <!-- OK -->
 The currency symbol for the Euro is "€".
 ```
+## type属性
+CSSとJavaScriptのtype属性は省略する。
+HTML5ではデフォルトの言語として解釈されるため。
+```html
+<!-- NG -->
+    <link rel="stylesheet" href="//www.google.com/css/maia.css" type="text/css">
+<!-- OK -->
+    <link rel="stylesheet" href="//www.google.com/css/maia.css">
+```
+```html
+<!-- NG -->
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js"
+    type="text/javascript"></script>
+<!-- OK -->
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+# HTMLの書式ルール
+## 全般的な書式
+ブロック要素、リスト要素、テーブル要素は改行してから記述し、それらの子要素にはインデントを入れる。
+横並びリストなど改行による空白が問題になうr場合は、li要素をすべて一行で書いてもOK。
+```html
+<blockquote>
+    <p><em>Space</em>, the final frontier.</p>
+</blockquote>
+<ul>
+    <li>Moe
+    <li>Larry
+    <li>Curly
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Income
+            <th scope="col">Taxes
+    <tbody>
+        <tr>
+            <td>$ 5.00
+            <td>$ 4.50
+</table>
+```
+
+# CSSスタイルシート
+## CSSのバリデート
+可能な限り適切なCSSを記述すること。
+CSSバリデーターにバグがある場合は独自の構文を必要としない限りは、ちゃんと書く。
+HTML同様「[W3C CSS validator](https://jigsaw.w3.org/css-validator/)」などのツールで検証する。
+
+## IDとクラスの命名
+IDとクラス名にはちゃんと意味のわかる名前を使うこと。
+見た目を反映したものやそれが何を表しているか不可解な名前ではなく、要素の目的や役割を反映した名前を付ける。
