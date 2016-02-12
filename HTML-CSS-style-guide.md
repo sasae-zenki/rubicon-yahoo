@@ -1,3 +1,5 @@
+[Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)に準拠
+
 # 全体的なスタイルルール
 
 ## プロトコル
@@ -66,12 +68,14 @@
 <!-- TODO:内容at人 -->
 ```
 
+
 # HTMLのスタイルルール
 ## ドキュメントタイプ
 HTML5を使うこと。以下で始まる形式で書く。XHTML5はNG。
 ```html
 <!DOCTYPE html>
 ```
+
 
 ## HTMLのバリデート(validate-妥当性確認-)
 可能な限り適切なHTMLを記述すること。
@@ -196,11 +200,13 @@ HTML5ではデフォルトの言語として解釈されるため。
 CSSバリデーターにバグがある場合は独自の構文を必要としない限りは、ちゃんと書く。
 HTML同様「[W3C CSS validator](https://jigsaw.w3.org/css-validator/)」などのツールで検証する。
 
+
 ## IDとクラスの命名
 IDとクラス名にはちゃんと意味のわかる名前を使うこと。
 見た目を反映したものやそれが何を表しているか不可解な名前ではなく、要素の目的や役割を反映した名前を付ける。
 ```CSS
 /* NG: 意味がわからん*/
+
 #yee-1901 {}
 
 /* NG: 見た目を表している*/
@@ -226,8 +232,9 @@ IDとクラス名にはちゃんと意味のわかる名前を使うこと。
 .art{}
 
 /* OK */
+
 #nav {}
-.author {}
+o.author {}
 ```
 
 ## タイプセレクタの記述
@@ -262,6 +269,7 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 
+
 ## 「0」と単位
 値が0なら、単位を省略する。
 ```CSS
@@ -269,16 +277,19 @@ margin: 0;
 padding: 0;
 ```
 
+
 ## 小数点の頭の「0」
 小数点の頭「0」は省略する。
 ```CSS
 font-size: .8em;
 ```
+
 ## URL値の引用符
 url()での指定において、""(ダブルコーテーション)を引用符として使用すること。
 ```CSS
 @import url("///www.google.com/css/go.css");
 ```
+
 
 ## HEX形式のカラーコード
 HEX形式のカラーコードで3文字で表記できるものは3文字にする。
@@ -290,6 +301,7 @@ color: #eebbcc;
 /* OK */
 color: #ebc;
 ```
+
 
 ## プレフィックス(接頭辞)
 IDやクラス名には固有の3文字の接頭辞を付ける。
@@ -309,6 +321,7 @@ IDやクラス名の別々の単語はハイフンで繋ぐ。
 .demo_image {}
 
 /* OK */
+
 #demo-image {}
 .demo-image {}
 ```
@@ -399,6 +412,7 @@ width: 50%; }
 セクションごとにコメント(任意)を記述する。
 ```CSS
 /* Header */
+
 #adw-header {}
 /* Footer */
 #adw-footer {}
