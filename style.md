@@ -141,3 +141,10 @@ HTML5を使うこと。以下で始まる形式で書く。XHTML5はNG。
 不要な実体参照は使用しないこと。
 UTF-8においては、ー(&mdash;)・"(&rdquo)・☺(&#x263a;)のような文字は実体参照を使う必要はない。
 HTMLで特別ない見を持つ文字(<や&など)は例外。
+```html
+<!-- NG -->
+The currency symbol for the Euro is &ldquo;&eur;&ldquo;.
+
+<!-- OK -->
+The currency symbol for the Euro is "€".
+```
