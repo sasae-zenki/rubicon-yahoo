@@ -88,5 +88,56 @@ HTML5を使うこと。以下で始まる形式で書く。XHTML5はNG。
 <title>Test</title>
 <article>This is only a test.</article>
 ```
+## セマンティック(意味のある様に)に書く
+目的に応じてHTMLを記述する。
+見出しならhx要素、段落ならp要素、アンカーならa要素など目的に応じたHTML要素を使う。
+リンクならa要素で書く。onclickのようなJavaScriptな振る舞いのものを要素の属性に入れない。
+```html
+<!-- NG -->
+<div onclick="goToRecommendations();">All recommendations</div>
 
+<!-- OK -->
+<a href="recommendation/">All recommendations</a>
+```
 
+## マルチメディアの代替コンテンツ
+マルチメディアの要素には、第垓コンテンツを提供する。
+画像には、意味のある第垓コンテンツをalt属性として、動画・オーディオコンテンツにはキャプションを記述する。
+装飾的な用途の場合など意味を持たない画像については、代替textは記述せずにalt=""とする。
+```html
+<!-- NG -->
+<img src="spreadsheet.png">
+
+<!-- OK -->
+<img src="spreadsheet.png" alt="Spreadsheet screenshot">
+```
+## 構成要素の分離
+文章構造・見た目・振る舞いは。分離すること。
+見た目に関するものはスタイルシートに、振る舞いに関するものはスクリプトへ移して記述する。
+```html
+<!-- NG -->
+  <!DOCTYPE html>
+  <title>HTML sucks</title>
+  <link rel="stylesheet" href="base.css" media="screen">
+  <link rel="stylesheet" href="grid.css" media="screen">
+  <link rel="stylesheet" href="print.css" media="print">
+  <h1 style="font-size: 1em;">HTML sucks</h1>
+  <p>I’ve read about this on a few sites but now I’m sure:
+      <u>HTML is stupid!!1</u>
+  <center>I can’t believe there’s no way to control the styling of
+      my website without doing everything all over again!</center>
+
+<!-- OK -->
+  <!DOCTYPE html>
+  <title>My first CSS-only redesign</title>
+  <link rel="stylesheet" href="default.css">
+  <h1>My first CSS-only redesign</h1>
+  <p>I’ve read about this on a few sites but today I’m actually
+      doing it: separating concerns and avoiding anything in the HTML of
+      my website that is presentational.
+  <p>It’s awesome!
+```
+## 実体参照
+不要な実体参照は使用しないこと。
+UTF-8においては、ー(&mdash;)・"(&rdquo)・☺(&#x263a;)のような文字は実体参照を使う必要はない。
+HTMLで特別ない見を持つ文字(<や&など)は例外。
