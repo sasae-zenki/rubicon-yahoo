@@ -1,4 +1,4 @@
-[Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)に準拠
+# [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)に準拠
 
 # 全体的なスタイルルール
 
