@@ -1,0 +1,8 @@
+table.calen { border-collapse:collapse; font-size:11pt; background-color:#fffafa; }
+table.calen th { border:1px solid #a57d6b; height:30px; }
+table.calen td { border:1px solid #a57d6b; text-align:center; height:30px; width:30px; }
+table.calen .sat { color:blue; }
+table.calen .sun { color:red; }
+table.calen .today { background-color:#ffe4ce; font-weight:bold; }
+table.calen tr.bg1 { background-color:#f5f5dc; }
+table.calen tr.bg2 { background-color:#eeeeee; }
